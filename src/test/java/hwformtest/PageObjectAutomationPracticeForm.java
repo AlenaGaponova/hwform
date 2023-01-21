@@ -2,13 +2,7 @@ package hwformtest;
 
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
-
-
 public class PageObjectAutomationPracticeForm extends Base {
-
 
     @Test
     void automationPracticeForm() {
@@ -39,6 +33,5 @@ public class PageObjectAutomationPracticeForm extends Base {
                 .verifyResult("Picture", "33.jpg")
                 .verifyResult("Address", "Swamp Street, 1")
                 .verifyResult("State and City", "NCR Noida");
-
     }
 }
