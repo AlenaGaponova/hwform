@@ -21,11 +21,13 @@ public class AutomationPracticeForm {
     void automationPracticeForm() {
         open("https://demoqa.com/automation-practice-form");
         $(".main-header").shouldHave(text("Practice Form"));
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
 
         //Заполнить форму
         $("#firstName").setValue("Bob"); //имя
         $("#lastName").setValue("White"); //фамилия
-        $("[for=gender-radio-1]").click(); //гендер
+        $("#genterWrapper").$(byText("Male")).click(); //гендер
         $("#userEmail").setValue("test@ya.ru"); //email
         $("#userNumber").setValue("89004840000"); //телефон
 
@@ -35,7 +37,7 @@ public class AutomationPracticeForm {
         $$(".react-datepicker__day").findBy(text("10")).click();
 
         $("#subjectsInput").setValue("Physics").pressEnter(); //предмет
-        $("[for=hobbies-checkbox-3]").click(); //хобби
+        $("#hobbiesWrapper").$(byText("Music")).click(); //хобби
         $("#uploadPicture").uploadFromClasspath("33.jpg"); //фото
         $("#currentAddress").setValue("Swamp Street, 1"); //адрес
 
